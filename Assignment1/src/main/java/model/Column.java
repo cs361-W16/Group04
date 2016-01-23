@@ -30,4 +30,7 @@ public class Column {
         else
             System.out.println("This column does not have enough cards to remove!");
     }
+    public Card getTop(){
+        return c[position-1];
+    }
 }

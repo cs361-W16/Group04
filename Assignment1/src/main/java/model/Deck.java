@@ -27,6 +27,7 @@ public class Deck {
         if(top <52) {
             Card c = cards[top];
             top += 1;
+            System.out.println(c.getSuit());
             return c;
         }
         return null;
