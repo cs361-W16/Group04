@@ -51,6 +51,15 @@ public class Game {
         }
         return 0;
     }
+    public int moveCard(int from, int to){
+        if (columns[from].returnSize() > 0 && columns[to].returnSize() == 0){
+            Card c = columns[from].getTop();
+            columns[from].remove();
+            columns[to].push(c);
+            return 1;
+        }
+        return 0;
+    }
     //for testing purpose
     public void addCard(int i, Card c) {
         columns[i].push(c);
