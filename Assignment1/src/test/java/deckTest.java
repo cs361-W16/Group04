@@ -16,7 +16,7 @@ public class deckTest {
     @Test
     public void testTop() {
         Deck d = new Deck();
-        d.makeDeck();
+
         Card c;
         c = d.member(0);
         assertEquals(0,c.getRank());
@@ -25,7 +25,6 @@ public class deckTest {
     @Test
     public void testlast() {
         Deck d = new Deck();
-        d.makeDeck();
         Card c;
         c = d.member(51);
         assertEquals("diamonds", c.getSuit());
@@ -34,7 +33,6 @@ public class deckTest {
     @Test
     public void testDealCard() {
         Deck d = new Deck();
-        d.makeDeck();
         Card c;
         c = d.dealTop();
         assertEquals("spades", c.getSuit());
