@@ -39,6 +39,15 @@ public class deckTest {
         c = d.dealTop();
         assertEquals("hearts", c.getSuit());
     }
+    @Test
+    public void testShuffleCard() {
+        Deck d = new Deck();
+        d.shuffleDeck();
+        Card c;
+        c = d.dealTop();
+        //assertEquals("spades", c.getSuit());
+        //Because the deck is shuffled, we don't know the suit of the top card.
+    }
 
 
 }
