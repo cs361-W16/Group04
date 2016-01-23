@@ -8,18 +8,18 @@ import static junit.framework.TestCase.assertEquals;
  * Created by Chongxian Chen on 1/22/16.
  */
 public class GameTest {
-    @Test
+    @Test //made by Nathan Tollbom
     public void testGame(){
         Game g = new Game();
     }
-    @Test
+    @Test //Made by Nathan Tollbom
     public void testDeal(){
         Game g = new Game();
         g.deal();
         Card c = g.getColTop(0);
         assert(c != null);
     }
-    @Test
+    @Test //made by Chongxian Chen
     public void testRemove() {
         Game g = new Game();
         Card c = new Card(7, 0);
@@ -29,7 +29,7 @@ public class GameTest {
         int i = g.removeCard(1);
         assertEquals(1, i);
     }
-    @Test
+    @Test //made by Chongxian Chen
     public void testRemoveSeveralCards() {
         Game g = new Game();
         Card c = new Card(7, 0);
@@ -44,7 +44,7 @@ public class GameTest {
         assertEquals(1, i);
     }
 
-    @Test
+    @Test //made by Chongxian Chen
     public void testRemoveSeveralCardsWithColumnsMoreThanOneCard() {
         Game g = new Game();
         Card c = new Card(7, 0);
@@ -58,6 +58,21 @@ public class GameTest {
         g.addCard(2, c4);
         g.addCard(3, c5);
         int i = g.removeCard(3);
+        assertEquals(1, i);
+    }
+
+    @Test //made by Nathan Tollbom
+    public void testMove(){
+        Game g = new Game();
+        Card c = new Card(7, 0);
+        Card c2 = new Card(8, 2);
+        Card c3 = new Card(12, 0);
+        Card c4 = new Card(1, 3);
+        g.addCard(0, c);
+        g.addCard(1, c2);
+        g.addCard(2, c4);
+        g.addCard(0, c3);
+        int i = g.moveCard(0, 3);
         assertEquals(1, i);
     }
 }
