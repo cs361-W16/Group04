@@ -26,4 +26,33 @@ public class Game {
     public Card getColTop(int idx){
         return columns[idx].getTop();
     }
+    public int removeCard(int i) {
+        if (columns[i].returnSize()>0) {
+            Card c = columns[i].getTop();
+            int r = c.getRank();
+            String s = c.getSuit();
+
+            for (int j=0; j<3; j++) {
+                if(columns[j].returnSize()>0) {
+                    Card c2;
+                    c2 = columns[j].getTop();
+                    int r2 = c2.getRank();
+                    String s2 = c2.getSuit();
+                    if (s2.equals(s)) {
+                        if (r2 > r) {
+                            columns[i].remove();
+                            return 1;
+                        }
+                    }
+                }
+
+            }
+            return 0;
+        }
+        return 0;
+    }
+    //for testing purpose
+    public void addCard(int i, Card c) {
+        columns[i].push(c);
+    }
 }
