@@ -5,13 +5,25 @@ package model;
  */
 public class Game {
     private Deck d;
-    private Column c1;
-    private Column c2;
-    private Column c3;
-    private Column c4;
+    private Column[] columns;
 
-    public void Game() {
+    public Game() {
         d = new Deck();
-        c1 = new Column(13);
+        d.shuffleDeck();
+        columns = new Column[4];
+        columns[0] = new Column(13);
+        columns[1] = new Column(13);
+        columns[2] = new Column(13);
+        columns[3] = new Column(13);
+    }
+
+    public void deal(){
+        for (int i = 0; i < 4; i++){
+            Card c = d.dealTop();
+            columns[i].push(c);
+        }
+    }
+    public Card getColTop(int idx){
+        return columns[idx].getTop();
     }
 }
