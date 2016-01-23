@@ -24,6 +24,7 @@ public class Column {
     }
     public void remove(){
         if (size>0) {
+            c[position-1] = null;
             position--;
             size--;
         }
@@ -32,5 +33,8 @@ public class Column {
     }
     public Card getTop(){
         return c[position-1];
+    }
+    public int returnSize() {
+        return size;
     }
 }
